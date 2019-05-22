@@ -1,12 +1,11 @@
 require 'logger'
 
 class PrimeNumbersSumArray
-  def initialize
-    program_info_message = '**** Hubbado Prime Sum Array Test ****'
-    log.info program_info_message
-  end
 
-  def calculate_array( num: 0 )
+  def calculate_array( num: 1 )
+    if num < 2 || num > 100
+      raise 'Argument out of range, valid range [1, 100]'
+    end
     resultingArray = Array.new(num){Array.new(num)}
 
     primeNumbers = get_prime_numbers(num_size: num )
@@ -42,20 +41,4 @@ class PrimeNumbersSumArray
     end
     prime
   end
-
-  def log
-    if @logger.nil?
-      @logger = Logger.new STDOUT
-      @logger.level = Logger::DEBUG
-      @logger.datetime_format = '%Y-%m-%d %H:%M:%S '
-    end
-    @logger
-  end
 end
-
-#begin
-#  app = PrimeNumbersSumArray.new
-#  print 'Input a number: '
-#  number = gets.chomp.to_i
-#  puts app.calculate_array( num: number )
-#end
