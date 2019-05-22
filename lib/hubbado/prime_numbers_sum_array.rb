@@ -3,6 +3,9 @@ require 'logger'
 class PrimeNumbersSumArray
 
   def calculate_array( num: 1 )
+    unless num.is_a? Integer
+      raise 'Invalid argument data type, integer required'
+    end
     if num < 2 || num > 100
       raise 'Argument out of range, valid range [1, 100]'
     end
