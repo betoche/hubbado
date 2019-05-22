@@ -2,7 +2,7 @@
 
 **Applicant   :** Alberto Larios S
 
-**Languate    :** Ruby
+**Language    :** Ruby
 
 **Date        :** 2019-05-22
 
